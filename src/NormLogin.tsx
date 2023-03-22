@@ -75,12 +75,16 @@ export const NormLogin = () => {
     };
 
     const proceedLogin = (e: React.MouseEvent) => {
-        // e.preventDefault()
-        axios.get("http://localhost:8080/users")
-            .then((res) => {
-                setCheck(res.data)
-            })
-        // console.log(check)
+         if(Email==='neh13@gmail.com'){
+            if(pass==='Neha@23R'){
+                navigate("/home")
+            }
+        }
+       
+        //axios.get("http://localhost:8080/users")
+          //  .then((res) => {
+          //      setCheck(res.data)
+        //    })
 
     };
     useEffect(() => {
