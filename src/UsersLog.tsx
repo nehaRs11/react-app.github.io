@@ -13,7 +13,7 @@ import { AppBar, Toolbar } from '@mui/material';
 type User = {
     id: number,
     name: string,
-    lname: string,
+    lastname: string,
     dob: string,
     age: string,
     address: string,
@@ -53,6 +53,57 @@ function UserLog() {
         { field: 'email' }
         // { field: '', cellRenderer: () => update }
     ]);
+    
+     const [rowData, setRowdata] = useState([
+        {
+            id: 1,
+            name: "Snehal",
+            lastname: "Jadhav",
+            dob: "21-01-1995",
+            age: "28",
+            address: "Gokhale Nagar",
+            email: "snehal@gmail.com",
+        },
+        {
+            id: 2,
+            name: "Rakshita",
+            lastname: "Singh",
+            dob: "03-11-2001",
+            age: "22",
+            address: "Viman Nagar",
+            email: "raksh@gmail.com",
+        },
+        {
+            id: 3,
+            name: "Ravi",
+            lastname: "Shah",
+            dob: "11-12-2000",
+            age: "23",
+            address: "Mumbai",
+            email: "ravi@gmail.com",
+        },
+        {
+            id: 4,
+            name: "Avni",
+            lastname: "Jain",
+            dob: "17-09-2002",
+            age: "21",
+            address: "HighSpirits",
+            email: "avni@gmail.com",
+
+        },
+        {
+            id: 5,
+            name: "Raj",
+            lastname: "Singh",
+            dob: "07-06-1998",
+            age: "26",
+            address: "Baner",
+            email: "raj@gmail.com",
+        },
+
+    ])
+    
     const defCol = useMemo(() => ({
         sortable: true,
         filter: true, flex: 1,
@@ -80,9 +131,9 @@ function UserLog() {
 
                 <AgGridReact
                     ref={gridRef}
-                    // rowData={rowData}
+                    rowData={rowData}
                     columnDefs={colDefs}
-                    onGridReady={onGridReady}
+                    //onGridReady={onGridReady}
                     rowSelection={'multiple'}
                     animateRows={true}
                     defaultColDef={defCol}
